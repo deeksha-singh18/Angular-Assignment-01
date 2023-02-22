@@ -1,0 +1,96 @@
+.container{
+  background-size: cover;
+  background: fixed;
+  
+  background-color: whitesmoke;
+  
+  background-attachment: fixed;
+  background-position: center; 
+  background-position: 50% 50%;
+  background-position: top center;
+  height: 100vh;
+  width: 100%; 
+}
+
+
+.card{
+  
+  border: none;
+  width: 500px;
+  padding: 30px;
+  position: absolute;
+  margin-left: 900px;
+  margin-top: 60px;
+  background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+  
+
+}
+
+.card h1{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight:560;
+}
+
+label{
+  color: black;
+}
+
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
+}
+
+
+select.ng-invalid.ng-touched{
+border: 2px solid red;
+}
+
+ .data{
+    float: left;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+
+ .details p{
+   
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .details{
+    padding: 30px;
+    background-color:antiquewhite;
+    width: 400px;
+  
+    
+  }
+
+  .data h4{
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+
+  #cancel{
+    margin-left: 50px;
+  }
+
+
+
+  label{
+    font-size: large;
+  }
+
+
+  #flag label:after{
+    content:" *";
+    color: red;
+  }
+
+  
+
+ 

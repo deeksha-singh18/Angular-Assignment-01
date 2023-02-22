@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Sign Up</h1>
+        </div>
+
+
+
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+
+          <div class="mb-3" id="reminder">
+
+            <label for="firstname" class="form-label">
+              First Name</label>
+
+            <input type="text" class="form-control" id="firstname" formControlName="firstname">
+
+
+            <span *ngIf="signupForm.get('firstname').invalid && signupForm.get('firstname').touched"
+              class="text-danger">Please enter first name</span>
+
+            <br>
+          </div>
+
+
+
+          <div class="mb-3">
+
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" formControlName="lastname">
+            
+            <br>
+          </div>
+
+
+
+          <div class="mb-3" id="reminder">
+
+            <label for="email" class="form-label">Email</label>
+
+            <input type="email" class="form-control" id="email" formControlName="email">
+
+            <span *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched" class="text-danger">Please
+              enter correct email</span>
+
+            <br>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="mb-3" id="reminder">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+
+            <span *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched"
+              class="text-danger">Please enter valid password</span>
+
+          <br>
+          </div>
+          
+
+
+
+          <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign up</button>
+        </form>
+        
+
+        <br>
+        <a class="login-link" routerLink="/login">Already registered? Click to Login</a>
+
+
+      </div>
+    </div>
+  </div>
+</div>

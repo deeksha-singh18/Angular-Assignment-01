@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Login</h1>
+        </div>
+
+        
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+           
+            
+            <div class="mb-3">
+
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username"
+              formControlName="username"
+              placeholder="Enter your username">
+
+
+              <span *ngIf="loginForm.get('username').invalid && 
+            loginForm.get('username').touched"
+            class="text-danger">Please enter username</span>
+              <br>
+            
+            </div>
+          
+
+            
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1"
+              formControlName="password"
+              placeholder="Enter your password">
+
+
+            <span *ngIf="loginForm.get('password').invalid && 
+            loginForm.get('password').touched"
+            class="text-danger">Please enter valid password</span>
+
+
+            </div>
+            <br>
+            
+            
+            <button type="submit" class="btn btn-success"
+            [disabled]="!loginForm.valid">Login</button>
+
+        
+          </form>
+           <br>
+          <a routerLink="/signup" class="login-link">New User? Click to Signup</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+

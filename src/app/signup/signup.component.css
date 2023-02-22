@@ -1,0 +1,37 @@
+
+.card{
+    margin-top: 120px;
+    border: none;
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    left: 60%;
+    background:linear-gradient(#7F8C8D,#000000);
+   
+   
+  
+  }
+  
+  .card h1{
+    color: white;
+  }
+  
+  label{
+    color: white;
+  }
+  
+
+  .login-link{
+
+    color: white;
+    text-decoration-line:underline;
+    
+  }
+
+  #reminder label:after{
+
+    content:" *";
+    color: red;
+
+  }
+  

@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+
+      <div class="data" *ngIf="submitted" >
+        
+          <div class="text-center">
+           <h4> Total saved user details </h4>
+          </div>
+          
+           <br>
+           <div class="details" *ngFor="let data of users">
+            
+            <p>Name :  {{data.name}}</p>
+           <p>College :  {{data.college}}</p>
+           <p>Degree :  {{data.degree}}</p>
+           <p>Specialization :  {{data.specialization}}</p>
+          
+          </div>
+        
+        </div>
+        
+
+
+
+
+      <div class="card">
+        <div class="text-center">
+          <h1>Fill Your Data</h1>
+        </div>
+        <br>
+        
+        <form (ngSubmit)="onSubmit()" #angForm="ngForm">
+
+            <div class="form-group">
+            <div class="mb-3" id="flag">
+
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="fname"
+              required
+              ngModel name="name"
+              #name="ngModel"
+              placeholder="Enter your name"
+              >
+
+              <span *ngIf="name.invalid && name.touched"
+              class="text-danger">Please enter name</span>
+
+              <span *ngIf="name.value.length>0 && name.value.length<3 && name.touched"
+              class="text-danger">Please enter valid name</span>
+
+
+              <br>
+            
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <div class="mb-3">
+
+              <label for="college" class="form-label">College Name</label>
+              <input type="text" class="form-control" id="college"
+              placeholder="Enter your college"
+              ngModel name="college"
+              >
+              
+              <br>
+            
+            </div>
+
+
+
+            <div class="form-group">
+
+            <div class="mb-3" id="flag">
+
+              <label for="degree" class="form-label">Degree</label>
+              <select id="degree" 
+               class="form-control"
+               ngModel name="degree"
+               required
+               #degree="ngModel"
+               >
+
+              <option value="">Select field</option>
+          
+              <option *ngFor = "let item of courses"
+              >
+            
+                 {{item}}
+            
+              </option>
+              </select>
+
+              <span *ngIf="!degree.valid && degree.touched"
+              class="text-danger">Please enter degree</span>
+              <br>
+            
+            </div>
+          </div>
+        </div>
+
+
+
+
+           <div class="form-group">
+            <div class="mb-3">
+              <label for="specialization" class="form-label">Specialization(optional)</label>
+              <textarea ngModel name="specialization" 
+              class="form-control" 
+          rows="3"
+          [(ngModel)]="textData">
+        </textarea>
+
+        <span>{{textData}}</span>
+      </div>
+            </div>
+            <br>
+            
+            <button type="submit" class="btn btn-primary"
+            [disabled]="angForm.invalid"
+            >Save</button>
+
+
+            <button class="btn btn-danger" id="cancel" type="reset"
+            (click)="resetForm()">Cancel</button>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
