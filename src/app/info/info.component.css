@@ -70,7 +70,7 @@ border: 2px solid red;
   .data h4{
     color: green;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 35px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
@@ -89,6 +89,18 @@ border: 2px solid red;
   #flag label:after{
     content:" *";
     color: red;
+  }
+
+
+
+  .user-info{
+    color: red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 30px;
+    position: absolute;
+    margin-left: 120px;
+    
   }
 
   

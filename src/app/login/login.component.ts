@@ -1,6 +1,7 @@
 import { Component, ViewChild ,OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators,FormControl } from "@angular/forms";
 import {ActivatedRoute, Router} from '@angular/router';
+import { Login } from '../interfaces/login';
 
 
 
@@ -16,10 +17,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 
 export class LoginComponent implements OnInit {
-  user = {
-    name: null,
-    password: null
-  };
+ 
+  message:string ="";
+
+  model:Login = {username:"deeksha",password:"deek1234"}
 
 
   constructor(private formBuilder:FormBuilder,private router:Router,
@@ -34,18 +35,47 @@ export class LoginComponent implements OnInit {
 
     this.loginForm=new FormGroup({
 
-      'username': new FormControl(null,[Validators.required,Validators.minLength(4)]),
-      'password':new FormControl(null,[Validators.required,Validators.minLength(8)])
+      username: new FormControl(null,[Validators.required,Validators.minLength(4)]),
+      password:new FormControl(null,[Validators.required,Validators.minLength(8)])
 
     });
   }
 
 
+  
+
 
   onSubmit() {
     
     console.log(this.loginForm);
-    this.router.navigate(['info'])
+    const data = this.loginForm.value;
+
+    if(this.loginForm.invalid){
+      return;
+    }
+
+   
+
+    else{
+      if(data.username==this.model.username && data.password==this.model.password){
+
+       
+        window.alert("Login Sucessful")
+
+        localStorage.setItem('isLoggedIn',"true");
+        localStorage.setItem('token',data.username);
+
+        this.router.navigate(['/info']);
+        
+      }
+
+      else{
+        this.message = "Invalid Credentials";
+        window.alert(this.message);
+      }
+    }
+
+    
   }
 
   

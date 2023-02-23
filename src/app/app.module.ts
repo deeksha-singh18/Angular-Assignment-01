@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { InfoComponent } from './info/info.component';
 import { SignupComponent } from './signup/signup.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -19,6 +22,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     LoginComponent,
     InfoComponent,
     SignupComponent,
+    NotFoundComponent,
     
     
   ],
@@ -32,7 +36,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     
   ],
   
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 

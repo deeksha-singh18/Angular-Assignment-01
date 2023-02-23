@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit(){
     console.log(this.signupForm);
+    window.alert("SignUp is sucessful");
     this.router.navigate(['info'])
     
   }

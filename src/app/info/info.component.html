@@ -2,7 +2,14 @@
   <div class="row">
     <div class="col-md-4">
 
+      <div class="user-box" *ngIf="users.length==0 && !submitted;
+      else:elseBlock">
 
+        <h1 class="user-info">No any user data saved yet!</h1>
+    </div>
+
+
+    <ng-template #elseBlock>
       <div class="data" *ngIf="submitted" >
         
           <div class="text-center">
@@ -20,6 +27,7 @@
           </div>
         
         </div>
+      </ng-template>
         
 
 
